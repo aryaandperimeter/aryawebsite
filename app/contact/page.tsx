@@ -1,62 +1,76 @@
+'use client';
+
 import Link from 'next/link';
 import BackButton from '../components/BackButton';
 import ContactCard from '../components/ContactCard';
 import SocialLink from '../components/SocialLink';
+import CircuitImage from '../components/CircuitImage';
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-[#1a1a1a]">
-      {/* Header Section */}
-      <section className="relative py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="backdrop-blur-md bg-black/30 p-8 rounded-2xl border border-white/10 shadow-2xl">
-              <h1 className="text-5xl font-bold mb-6 text-white">
-                Contact Me
-              </h1>
-              <p className="text-xl text-cyan-300">
-                Let's connect and build something amazing together
-              </p>
-            </div>
-          </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white p-8">
+      <CircuitImage position="left" imageType="circuit" />
+      <CircuitImage position="upper-right" imageType="rightcircuit" />
+      
+      {/* Phone Image */}
+      <div className="absolute bottom-0 right-0 z-20">
+        <img 
+          src="/phone.png" 
+          alt="Phone"
+          className="w-[600px] h-[600px] object-contain"
+        />
+      </div>
+      
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-8 text-center">
+          <h1 className="text-5xl font-bold text-white" style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)' }}>Contact</h1>
+          <p className="text-gray-400 mt-2">Get in touch with me</p>
         </div>
-      </section>
 
-      {/* Contact Information */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="glass-card p-8 backdrop-blur-md bg-black/30 border border-white/10 shadow-2xl">
+        {/* Contact Information */}
+        <div className="max-w-3xl mx-auto mb-8">
+          <div 
+            className="relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-2xl"
+            style={{
+              background: 'black',
+              border: '2px solid #ff00ff',
+              boxShadow: '0 0 10px #ff00ff40',
+            }}
+          >
+            <div className="p-8 rounded-lg">
               <div className="space-y-8">
                 {/* Email */}
-                <ContactCard 
-                  icon={
+                <div className="flex items-center space-x-4 group transition-transform duration-300 hover:translate-x-1">
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:bg-black transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                  }
-                  title="Email"
-                  value="sharm215@msu.edu"
-                  link="mailto:sharm215@msu.edu"
-                />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">Email</h3>
+                    <a href="mailto:sharm215@msu.edu" className="text-cyan-300 text-lg hover:text-cyan-400 transition-colors">sharm215@msu.edu</a>
+                  </div>
+                </div>
 
                 {/* Location */}
-                <ContactCard 
-                  icon={
+                <div className="flex items-center space-x-4 group transition-transform duration-300 hover:translate-x-1">
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:bg-black transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                  }
-                  title="Location"
-                  value="Kalamazoo, Michigan"
-                />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">Location</h3>
+                    <p className="text-cyan-300 text-lg">Kalamazoo, Michigan</p>
+                  </div>
+                </div>
 
                 {/* Social Links */}
                 <div className="pt-4">
                   <h3 className="text-xl font-semibold text-white mb-4">Connect with me</h3>
                   <div className="flex flex-col space-y-4">
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 group transition-transform duration-300 hover:translate-x-1">
                       <SocialLink 
                         href="https://www.linkedin.com/in/arya-sharma-535262228/" 
                         icon={
@@ -67,7 +81,7 @@ export default function Contact() {
                       />
                       <span className="text-white text-lg">LinkedIn</span>
                     </div>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 group transition-transform duration-300 hover:translate-x-1">
                       <SocialLink 
                         href="https://www.tiktok.com/@techmonke123?_t=ZP-8vahuWmslIt&_r=1" 
                         icon={
@@ -84,14 +98,12 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Back Button */}
-      <section className="py-10">
-        <div className="container mx-auto px-4 text-center">
+        {/* Back Button */}
+        <div className="text-center">
           <BackButton href="/" text="Back to Home" />
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 } 

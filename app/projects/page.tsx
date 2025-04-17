@@ -1,6 +1,10 @@
+'use client';
+
+import React from 'react';
 import Link from 'next/link';
 import BackButton from '../components/BackButton';
 import ProjectCard from '../components/ProjectCard';
+import CircuitImage from '../components/CircuitImage';
 
 const projects = [
   {
@@ -29,13 +33,15 @@ const projects = [
   }
 ];
 
-export default function Projects() {
+const Projects = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white p-8">
+      <CircuitImage position="left" imageType="circuit" />
+      <CircuitImage position="upper-right" imageType="rightcircuit" />
       <div className="max-w-6xl mx-auto">
-        <div className="glass-card p-8 mb-8 backdrop-blur-md bg-black/30 border border-white/10 shadow-2xl text-center">
-          <h1 className="text-4xl font-bold mb-4">Projects</h1>
-          <p className="text-xl text-gray-300">Explore my latest work and contributions.</p>
+        <div className="mb-8 text-center">
+          <h1 className="text-5xl font-bold text-white" style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)' }}>Projects</h1>
+          <p className="text-gray-400 mt-2">Check out some of my recent work</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
@@ -44,8 +50,12 @@ export default function Projects() {
           ))}
         </div>
 
-        <BackButton href="/" text="Back to Home" />
+        <div className="text-center">
+          <BackButton href="/" text="Back to Home" />
+        </div>
       </div>
     </div>
   );
-} 
+};
+
+export default Projects; 

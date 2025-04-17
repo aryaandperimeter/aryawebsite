@@ -22,18 +22,6 @@ const config: Config = {
         'neon': '0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff',
         'neon-pink': '0 0 10px #f0f, 0 0 20px #f0f, 0 0 30px #f0f',
       },
-      animation: {
-        'glitch': 'glitch 1s linear infinite',
-      },
-      keyframes: {
-        glitch: {
-          '0%, 100%': { transform: 'translate(0)' },
-          '20%': { transform: 'translate(-2px, 2px)' },
-          '40%': { transform: 'translate(-2px, -2px)' },
-          '60%': { transform: 'translate(2px, 2px)' },
-          '80%': { transform: 'translate(2px, -2px)' },
-        },
-      },
     },
   },
   plugins: [],
