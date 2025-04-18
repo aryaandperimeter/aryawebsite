@@ -23,17 +23,17 @@ const TitleCard: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-6xl mx-auto mb-16">
+    <div className="w-full max-w-7xl mx-auto mb-16">
       <NeonBorder 
         color="#ff00ff"
         pulseSpeed={3}
         borderWidth={2}
         glowIntensity={10}
-        className="p-20 md:p-32 rounded-xl backdrop-blur-md bg-black/30"
+        className="p-12 md:p-20 lg:p-32 rounded-xl backdrop-blur-md bg-black/30"
       >
-        <div className="text-center py-8">
-          <div className="flex items-center justify-center mb-6">
-            <h1 className="text-4xl md:text-5xl font-bold">
+        <div className="text-center py-6 md:py-8 lg:py-12">
+          <div className="flex items-center justify-center mb-4 md:mb-6 lg:mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
               {text}
               <motion.span
                 initial={{ opacity: 1 }}
@@ -47,10 +47,10 @@ const TitleCard: React.FC = () => {
             <img 
               src="/face.png" 
               alt="Face"
-              className="ml-4 w-20 h-20 object-contain"
+              className="ml-4 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
             />
           </div>
-          <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white max-w-3xl mx-auto leading-relaxed">
             I'm a curious builder who loves exploring where tech meets impact.
             From ideas to reality, I make things happen through code and collaboration.
           </p>

@@ -7,8 +7,7 @@ export default function Experiences() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white p-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8 text-center">
-          <h1 className="text-5xl font-bold text-white" style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)' }}>Experiences</h1>
-          <p className="text-gray-400 mt-2">My professional journey</p>
+          <h1 className="text-5xl font-bold text-white">Experiences</h1>
         </div>
 
         {/* Experience Cards */}

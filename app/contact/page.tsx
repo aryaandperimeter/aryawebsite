@@ -17,14 +17,13 @@ export default function Contact() {
         <img 
           src="/phone.png" 
           alt="Phone"
-          className="w-[600px] h-[600px] object-contain"
+          className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px] object-contain"
         />
       </div>
       
       <div className="max-w-6xl mx-auto">
         <div className="mb-8 text-center">
-          <h1 className="text-5xl font-bold text-white" style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)' }}>Contact</h1>
-          <p className="text-gray-400 mt-2">Get in touch with me</p>
+          <h1 className="text-5xl font-bold text-white">Contact</h1>
         </div>
 
         {/* Contact Information */}

@@ -3,7 +3,7 @@
 export default function BackgroundImage() {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 w-[300vw] -left-[100vw]">
+      <div className="absolute inset-0 w-full h-full">
         <img 
           src="/cyberpunk-city.jpg" 
           alt="Cyberpunk city background"
