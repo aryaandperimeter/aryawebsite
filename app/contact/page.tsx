@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import BackButton from '../components/BackButton';
 import ContactCard from '../components/ContactCard';
 import SocialLink from '../components/SocialLink';
@@ -14,12 +13,11 @@ export default function Contact() {
       <CircuitImage position="upper-right" imageType="rightcircuit" />
       
       {/* Phone Image */}
-      <div className="absolute bottom-0 right-0 z-20 w-[600px] h-[600px]">
-        <Image 
+      <div className="absolute bottom-0 right-0 z-20">
+        <img 
           src="/phone.png" 
           alt="Phone"
-          fill
-          className="object-contain"
+          className="w-[600px] h-[600px] object-contain"
         />
       </div>
       
