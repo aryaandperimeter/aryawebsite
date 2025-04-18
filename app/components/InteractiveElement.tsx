@@ -34,25 +34,24 @@ export default function InteractiveElement({
   };
   const handleMouseUp = () => setIsPressed(false);
 
-  useEffect(() => {
+  const handleClick = (e: React.MouseEvent) => {
     const element = elementRef.current;
     if (!element) return;
 
-    const handleClick = (e: MouseEvent) => {
-      const ripple = document.createElement('div');
-      ripple.className = 'absolute bg-purple-500/20 rounded-full transform scale-0 animate-ripple';
-      ripple.style.left = `${ripplePosition.x}px`;
-      ripple.style.top = `${ripplePosition.y}px`;
-      element.appendChild(ripple);
+    const ripple = document.createElement('div');
+    ripple.className = 'absolute bg-purple-500/20 rounded-full transform scale-0 animate-ripple';
+    ripple.style.left = `${ripplePosition.x}px`;
+    ripple.style.top = `${ripplePosition.y}px`;
+    element.appendChild(ripple);
 
-      setTimeout(() => {
-        ripple.remove();
-      }, 1000);
-    };
+    setTimeout(() => {
+      ripple.remove();
+    }, 1000);
 
-    element.addEventListener('click', handleClick);
-    return () => element.removeEventListener('click', handleClick);
-  }, [ripplePosition]);
+    if (onClick) {
+      onClick();
+    }
+  };
 
   const baseClasses = 'relative overflow-hidden transition-all duration-300';
   const typeClasses = {
@@ -69,7 +68,7 @@ export default function InteractiveElement({
       onMouseLeave={handleMouseLeave}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
-      onClick={onClick}
+      onClick={handleClick}
       style={{
         transform: isPressed ? 'scale(0.98)' : isHovered ? 'scale(1.02)' : 'scale(1)'
       }}
