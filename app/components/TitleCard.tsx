@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import NeonBorder from './NeonBorder';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const TitleCard: React.FC = () => {
   const [text, setText] = useState('');
@@ -44,11 +45,15 @@ const TitleCard: React.FC = () => {
                 |
               </motion.span>
             </h1>
-            <img 
-              src="/face.png" 
-              alt="Face"
-              className="ml-4 w-20 h-20 object-contain"
-            />
+            <div className="ml-4 relative w-20 h-20">
+              <Image 
+                src="/face.png" 
+                alt="Face"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
           <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed">
             I'm a curious builder who loves exploring where tech meets impact.
