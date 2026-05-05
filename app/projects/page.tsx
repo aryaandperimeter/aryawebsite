@@ -1,13 +1,18 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import BackButton from '../components/BackButton';
 import ProjectCard from '../components/ProjectCard';
 import CircuitImage from '../components/CircuitImage';
-import GitHubButton from '../components/GitHubButton';
 
 const projects = [
+  {
+    title: 'LinkedIn Trend Radar',
+    description:
+      '• Utilized Claude Code to design an AI-powered prototype enabling LinkedIn creators to discover trending topics across industries and generate personalized content angles\n• Defined validation framework (user interviews, behavioral data, competitive analysis), built an interactive Figma Make prototype, and established success metrics.',
+    technologies: ['Claude Code', 'AI', 'Figma', 'User Research', 'Product'],
+    icon: '📡',
+  },
   {
     title: 'Customer Personality Analysis',
     description: '• Analyzed customer demographics and behavior\n• Identified purchasing patterns\n• Created targeted marketing strategies\n• Improved recommendation systems',
@@ -36,28 +41,30 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white p-8">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-gray-900 to-black text-white p-6 md:p-8">
       <CircuitImage position="left" imageType="circuit" />
       <CircuitImage position="upper-right" imageType="rightcircuit" />
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-8 text-center">
-          <h1 className="text-5xl font-bold text-white">Projects</h1>
-        </div>
+      <div className="relative z-10 mx-auto max-w-3xl">
+        <header className="mb-10 text-center md:mb-12">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-fuchsia-400/90">
+            Build
+          </p>
+          <h1 className="text-4xl font-bold text-white md:text-5xl">Projects</h1>
+          <p className="mx-auto mt-3 max-w-lg text-sm text-gray-400 md:text-base">
+            Things I&apos;ve shipped or prototyped.
+          </p>
+        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="mb-10 space-y-6 md:space-y-7">
           {projects.map((project, index) => (
-            <div key={index} className="flex flex-col">
-              <ProjectCard 
-                title={project.title}
-                description={project.description}
-                technologies={project.technologies}
-                icon={project.icon}
-                githubLink={project.githubLink}
-              />
-              <div className="mt-4 flex justify-center">
-                <GitHubButton href={project.githubLink} />
-              </div>
-            </div>
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              technologies={project.technologies}
+              icon={project.icon}
+              githubLink={project.githubLink}
+            />
           ))}
         </div>
 

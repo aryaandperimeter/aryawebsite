@@ -83,6 +83,25 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 
+@keyframes hobbies-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hobbies-marquee-track {
+  animation: hobbies-marquee 36s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hobbies-marquee-track {
+    animation: none;
+  }
+}
+
 /* Component styles */
 .glass-card {
   background: rgba(255, 255, 255, 0.1);

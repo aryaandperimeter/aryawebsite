@@ -3,58 +3,65 @@
 import React from 'react';
 import BackgroundImage from './components/BackgroundImage';
 import Link from 'next/link';
-import NeonBorder from './components/NeonBorder';
 import TitleCard from './components/TitleCard';
-import { motion } from 'framer-motion';
-import { FaCode, FaBrain, FaTasks, FaRobot } from 'react-icons/fa';
+import { FaCode, FaBrain, FaTasks } from 'react-icons/fa';
 import SkillCard from './components/SkillCard';
 import RobotImage from './components/RobotImage';
 import RightRobotImage from './components/RightRobotImage';
 import Footer from './components/Footer';
 
+const ctaClassName =
+  'inline-flex items-center justify-center rounded-full border border-fuchsia-500/40 bg-black/40 px-8 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/55 hover:bg-fuchsia-950/25 hover:shadow-[0_0_22px_rgba(255,0,255,0.28)] active:scale-[0.98]';
+
 export default function Home() {
   return (
-    <main className="min-h-screen relative overflow-hidden">
+    <main className="relative min-h-screen overflow-hidden">
       <BackgroundImage />
       <RobotImage />
       <RightRobotImage />
-      
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+
+      <section className="relative z-10 flex min-h-screen items-center justify-center py-16 md:py-20">
+        <div className="container mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
           <TitleCard />
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Link href="/projects" className="glass-card px-8 py-3 rounded-full font-semibold bg-purple-600/80 hover:bg-purple-500/90 transition-all duration-300 shadow-[0_0_15px_rgba(147,51,234,0.5)] hover:shadow-[0_0_20px_rgba(147,51,234,0.7)]">
+          <nav
+            className="mt-10 flex flex-wrap justify-center gap-3 md:mt-12 md:gap-4"
+            aria-label="Primary"
+          >
+            <Link href="/projects" className={ctaClassName}>
               View Projects
             </Link>
-            <Link href="/experiences" className="glass-card px-8 py-3 rounded-full font-semibold bg-purple-600/80 hover:bg-purple-500/90 transition-all duration-300 shadow-[0_0_15px_rgba(147,51,234,0.5)] hover:shadow-[0_0_20px_rgba(147,51,234,0.7)]">
+            <Link href="/experiences" className={ctaClassName}>
               View Experiences
             </Link>
-            <Link href="/contact" className="glass-card px-8 py-3 rounded-full font-semibold bg-purple-600/80 hover:bg-purple-500/90 transition-all duration-300 shadow-[0_0_15px_rgba(147,51,234,0.5)] hover:shadow-[0_0_20px_rgba(147,51,234,0.7)]">
+            <Link href="/hobbies" className={ctaClassName}>
+              Hobbies &amp; interests
+            </Link>
+            <Link href="/contact" className={ctaClassName}>
               Contact Me
             </Link>
-          </div>
+          </nav>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="relative py-12 md:py-20 lg:py-32">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+      <section className="relative z-10 py-16 md:py-24" aria-label="Skills">
+        <div className="relative mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-x-4 lg:gap-y-10">
             <SkillCard
               title="Programming"
               skills={['Python', 'JavaScript', 'React', 'Next.js', 'TypeScript']}
-              icon={<FaCode className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mx-auto text-purple-400" />}
+              icon={<FaCode className="h-7 w-7 text-fuchsia-200 md:h-8 md:w-8" />}
             />
             <SkillCard
+              className="lg:mt-6"
               title="Data Science & ML"
-              icon={<FaBrain className="text-4xl text-purple-400" />}
-              skills={["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy"]}
+              icon={<FaBrain className="h-7 w-7 text-fuchsia-200 md:h-8 md:w-8" />}
+              skills={['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'SQL', 'R']}
             />
             <SkillCard
-              title="Project Management"
+              className="md:col-span-2 md:max-w-md md:justify-self-center lg:col-span-1 lg:mt-0 lg:max-w-none lg:justify-self-stretch"
+              title="Product Management"
               skills={['Agile', 'Scrum', 'Team Leadership', 'Strategic Planning']}
-              icon={<FaTasks className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mx-auto text-purple-400" />}
+              icon={<FaTasks className="h-7 w-7 text-fuchsia-200 md:h-8 md:w-8" />}
             />
           </div>
         </div>
@@ -63,4 +70,4 @@ export default function Home() {
       <Footer />
     </main>
   );
-} 
+}
