@@ -3,7 +3,6 @@
 import React from 'react';
 import BackButton from '../components/BackButton';
 import ProjectCard from '../components/ProjectCard';
-import CircuitImage from '../components/CircuitImage';
 
 const projects = [
   {
@@ -41,21 +40,19 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-gray-900 to-black text-white p-6 md:p-8">
-      <CircuitImage position="left" imageType="circuit" />
-      <CircuitImage position="upper-right" imageType="rightcircuit" />
-      <div className="relative z-10 mx-auto max-w-3xl">
+    <div className="relative min-h-screen bg-ink text-white">
+      <div className="mx-auto max-w-3xl px-6 py-14 md:px-8 md:py-20">
         <header className="mb-10 text-center md:mb-12">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-fuchsia-400/90">
+          <p className="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-accent/80">
             Build
           </p>
-          <h1 className="text-4xl font-bold text-white md:text-5xl">Projects</h1>
-          <p className="mx-auto mt-3 max-w-lg text-sm text-gray-400 md:text-base">
+          <h1 className="text-4xl font-semibold text-white md:text-5xl">Projects</h1>
+          <p className="mx-auto mt-3 max-w-lg text-sm text-zinc-400 md:text-base">
             Things I&apos;ve shipped or prototyped.
           </p>
         </header>
 
-        <div className="mb-10 space-y-6 md:space-y-7">
+        <div className="mb-10 space-y-5">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
@@ -76,4 +73,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;
