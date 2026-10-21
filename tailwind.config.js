@@ -23,6 +23,7 @@ module.exports = {
       },
       fontFamily: {
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        serif: ['var(--font-serif)', 'serif'],
       },
       keyframes: {
         fadeUp: {

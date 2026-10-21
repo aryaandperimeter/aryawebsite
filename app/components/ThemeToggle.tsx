@@ -30,7 +30,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
-      className="fixed right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-line/15 bg-ink/80 text-fg-secondary backdrop-blur-sm transition-colors duration-200 hover:border-accent/50 hover:text-fg md:right-6 md:top-6"
+      className="emphasis-border card-surface fixed right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-line/15 bg-ink/80 text-fg-secondary backdrop-blur-sm transition-colors duration-200 hover:text-fg md:right-6 md:top-6"
     >
       {isLight ? <FaMoon className="h-4 w-4" /> : <FaSun className="h-4 w-4" />}
     </button>

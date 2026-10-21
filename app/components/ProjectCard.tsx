@@ -28,12 +28,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const highlights = parseHighlightLines(description);
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-line/10 bg-panel/50 transition-colors duration-200 hover:border-accent/35">
+    <div className="emphasis-border card-surface group relative overflow-hidden rounded-2xl border border-line/15 bg-panel/50 transition-colors duration-200">
       <div className="flex gap-5 p-6 md:p-8">
         <div className="min-w-0 flex-1">
           <div className="mb-5 flex items-start justify-between gap-4 border-b border-line/10 pb-5">
             <div className="min-w-0">
-              <h2 className="text-xl font-semibold leading-tight text-fg md:text-2xl">
+              <h2 className="font-serif text-xl font-semibold leading-tight text-fg md:text-2xl">
                 {title}
               </h2>
             </div>

@@ -90,7 +90,7 @@ export default function Experiences() {
     <div className="relative min-h-screen overflow-x-hidden bg-ink bg-grid text-fg">
       <div className="mx-auto max-w-6xl px-5 pb-4 pt-10 md:px-10 md:pt-14">
         <header className="text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-fg md:text-5xl">
+          <h1 className="font-serif text-4xl font-semibold tracking-tight text-fg md:text-5xl">
             Experiences
           </h1>
         </header>

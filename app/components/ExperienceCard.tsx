@@ -26,7 +26,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 }) => {
   return (
     <div
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line/10 bg-panel/50 p-6 transition-colors duration-200 hover:border-accent/35 md:p-7 ${className}`}
+      className={`emphasis-border card-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line/15 bg-panel/50 p-6 transition-colors duration-200 md:p-7 ${className}`}
     >
       <div className="mb-5 flex items-start justify-between gap-4 border-b border-line/10 pb-5">
         <div className="flex min-w-0 flex-1 items-start gap-4">
@@ -39,7 +39,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
             </div>
           ) : null}
           <div className="min-w-0 flex-1">
-            <h2 className="text-xl font-semibold leading-tight text-fg md:text-2xl">
+            <h2 className="font-serif text-xl font-semibold leading-tight text-fg md:text-2xl">
               {company}
             </h2>
             <p className="mt-1.5 text-sm font-medium text-fg-tertiary md:text-base">{title}</p>
