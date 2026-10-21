@@ -65,9 +65,6 @@ export default function Experiences() {
         <header className="mb-0">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-4">
             <div>
-              <p className="mb-1 font-mono text-xs uppercase tracking-[0.28em] text-accent/80">
-                Work
-              </p>
               <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
                 Experiences
               </h1>

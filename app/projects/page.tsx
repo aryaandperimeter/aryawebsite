@@ -43,13 +43,7 @@ const Projects = () => {
     <div className="relative min-h-screen bg-ink text-white">
       <div className="mx-auto max-w-3xl px-6 py-14 md:px-8 md:py-20">
         <header className="mb-10 text-center md:mb-12">
-          <p className="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-accent/80">
-            Build
-          </p>
           <h1 className="text-4xl font-semibold text-white md:text-5xl">Projects</h1>
-          <p className="mx-auto mt-3 max-w-lg text-sm text-zinc-400 md:text-base">
-            Things I&apos;ve shipped or prototyped.
-          </p>
         </header>
 
         <div className="mb-10 space-y-5">

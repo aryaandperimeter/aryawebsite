@@ -8,9 +8,6 @@ export default function Contact() {
     <div className="min-h-screen bg-ink bg-grid text-white">
       <div className="mx-auto max-w-2xl px-6 py-14 md:px-8 md:py-20">
         <div className="mb-10 text-center">
-          <p className="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-accent/80">
-            Say hi
-          </p>
           <h1 className="text-4xl font-semibold text-white md:text-5xl">Contact</h1>
         </div>
 
