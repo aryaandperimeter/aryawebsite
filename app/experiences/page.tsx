@@ -88,6 +88,61 @@ const research = [
   },
 ];
 
+function Timeline({ items }: { items: typeof workExperience }) {
+  return (
+    <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 z-20 w-10 bg-gradient-to-r from-ink via-ink/90 to-transparent md:w-16"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 z-20 w-10 bg-gradient-to-l from-ink via-ink/90 to-transparent md:w-16"
+        aria-hidden
+      />
+
+      <div
+        className="overflow-x-auto scroll-smooth overscroll-x-contain pb-6 pt-1 [scrollbar-color:rgba(94,234,212,0.4)_rgba(255,255,255,0.06)] [scrollbar-width:thin] snap-x snap-mandatory touch-pan-x"
+        tabIndex={0}
+        role="region"
+        aria-label="Scroll horizontally"
+      >
+        <div className="relative flex w-max min-w-0 gap-6 px-6 pb-2 pt-12 md:gap-8 md:px-12 md:pt-14">
+          <div
+            className="pointer-events-none absolute left-6 right-6 top-6 z-0 h-px bg-white/10 md:left-12 md:right-12 md:top-7"
+            aria-hidden
+          />
+
+          {items.map((exp, index) => (
+            <div
+              key={`${exp.company}-${index}`}
+              className="relative z-10 flex w-[min(85vw,22rem)] shrink-0 snap-center snap-always flex-col sm:w-[24rem] md:w-[26rem]"
+            >
+              <div className="absolute -top-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 md:-top-9">
+                <div className="h-3 w-3 rounded-full border-2 border-accent bg-ink md:h-3.5 md:w-3.5" aria-hidden />
+                <span className="max-w-[12rem] text-center font-mono text-[0.65rem] uppercase leading-tight tracking-wider text-zinc-500">
+                  {exp.date}
+                </span>
+              </div>
+
+              <div className="mt-2">
+                <ExperienceCard
+                  title={exp.title}
+                  company={exp.company}
+                  date={exp.date}
+                  achievements={exp.achievements}
+                  skills={exp.skills}
+                  companyIcon={exp.companyIcon}
+                  hideDate
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Section({
   label,
   items,
@@ -97,42 +152,32 @@ function Section({
 }) {
   return (
     <section className="mb-12 md:mb-14">
-      <div className="mb-6 flex items-center gap-3">
+      <div className="mx-auto mb-2 flex max-w-6xl items-center gap-3 px-5 md:px-10">
         <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
         <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
           {label}
         </h2>
       </div>
-      <div className="space-y-5">
-        {items.map((exp, index) => (
-          <ExperienceCard
-            key={`${exp.company}-${index}`}
-            title={exp.title}
-            company={exp.company}
-            date={exp.date}
-            achievements={exp.achievements}
-            skills={exp.skills}
-            companyIcon={exp.companyIcon}
-          />
-        ))}
-      </div>
+      <Timeline items={items} />
     </section>
   );
 }
 
 export default function Experiences() {
   return (
-    <div className="relative min-h-screen bg-ink bg-grid text-white">
-      <div className="mx-auto max-w-3xl px-6 py-14 md:px-8 md:py-20">
-        <header className="mb-10 text-center md:mb-12">
+    <div className="relative min-h-screen overflow-x-hidden bg-ink bg-grid text-white">
+      <div className="mx-auto max-w-6xl px-5 pb-4 pt-10 md:px-10 md:pt-14">
+        <header className="text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
             Experiences
           </h1>
         </header>
+      </div>
 
-        <Section label="Work Experience" items={workExperience} />
-        <Section label="Research" items={research} />
+      <Section label="Work Experience" items={workExperience} />
+      <Section label="Research" items={research} />
 
+      <div className="relative z-10 mx-auto max-w-6xl px-5 pb-10 pt-2 md:px-10 md:pb-14">
         <div className="text-center">
           <BackButton href="/" text="Back to Home" />
         </div>

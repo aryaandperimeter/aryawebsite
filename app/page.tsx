@@ -28,9 +28,6 @@ export default function Home() {
             <Link href="/experiences" className={ctaClassName}>
               View Experiences
             </Link>
-            <Link href="/hobbies" className={ctaClassName}>
-              Hobbies &amp; interests
-            </Link>
             <Link href="/contact" className={ctaClassName}>
               Contact Me
             </Link>
