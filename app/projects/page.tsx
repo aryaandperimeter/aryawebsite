@@ -6,6 +6,20 @@ import ProjectCard from '../components/ProjectCard';
 
 const projects = [
   {
+    title: 'NIST + Johns Hopkins University Data Science Capstone',
+    description:
+      '• Building an end-to-end NLP and data engineering pipeline to ingest, extract, normalize, and structure resilience planning data from unstructured municipal websites and documents across the U.S.',
+    technologies: ['NLP', 'Data Engineering', 'Python', 'Data Pipelines'],
+    icon: '🏛️',
+  },
+  {
+    title: 'Gendered Emotions in 360° VR',
+    description:
+      '• Led research analyzing correlation between user sex and emotional responses in immersive VR environments using the VREED dataset.\n• Applied advanced statistical methods to model emotion–sex relationships, providing actionable insights for improving VR emotion recognition algorithms.',
+    technologies: ['Python', 'Statistical Modeling', 'VR', 'Emotion Recognition'],
+    icon: '🥽',
+  },
+  {
     title: 'LinkedIn Trend Radar',
     description:
       '• Utilized Claude Code to design an AI-powered prototype enabling LinkedIn creators to discover trending topics across industries and generate personalized content angles\n• Defined validation framework (user interviews, behavioral data, competitive analysis), built an interactive Figma Make prototype, and established success metrics.',
