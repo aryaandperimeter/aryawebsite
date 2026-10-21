@@ -8,12 +8,12 @@ import SkillCard from './components/SkillCard';
 import Footer from './components/Footer';
 
 const ctaClassName =
-  'inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-3 text-sm font-medium text-zinc-200 transition-colors duration-200 hover:border-accent/50 hover:text-white';
+  'inline-flex items-center justify-center rounded-full border border-line/15 px-7 py-3 text-sm font-medium text-fg-secondary transition-colors duration-200 hover:border-accent/50 hover:text-fg';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-grid">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(94,234,212,0.08),transparent)]" />
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-accent-glow" />
 
       <section className="relative z-10 flex min-h-screen items-center justify-center py-16 md:py-20">
         <div className="container mx-auto max-w-5xl px-4 md:px-6 lg:px-8">

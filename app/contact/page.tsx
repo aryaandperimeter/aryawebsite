@@ -5,43 +5,43 @@ import SocialLink from '../components/SocialLink';
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-ink bg-grid text-white">
+    <div className="min-h-screen bg-ink bg-grid text-fg">
       <div className="mx-auto max-w-2xl px-6 py-14 md:px-8 md:py-20">
         <div className="mb-10 text-center">
-          <h1 className="text-4xl font-semibold text-white md:text-5xl">Contact</h1>
+          <h1 className="text-4xl font-semibold text-fg md:text-5xl">Contact</h1>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-panel/50 p-8">
+        <div className="rounded-2xl border border-line/10 bg-panel/50 p-8">
           <div className="space-y-8">
             <div className="flex items-center gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line/10">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-fg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">Email</h3>
-                <a href="mailto:sharm215@msu.edu" className="text-lg text-zinc-200 transition-colors hover:text-accent">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-muted">Email</h3>
+                <a href="mailto:sharm215@msu.edu" className="text-lg text-fg-secondary transition-colors hover:text-accent">
                   sharm215@msu.edu
                 </a>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line/10">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-fg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">Location</h3>
-                <p className="text-lg text-zinc-200">Kalamazoo, Michigan</p>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-muted">Location</h3>
+                <p className="text-lg text-fg-secondary">Kalamazoo, Michigan</p>
               </div>
             </div>
 
-            <div className="border-t border-white/10 pt-6">
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-zinc-500">
+            <div className="border-t border-line/10 pt-6">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-fg-muted">
                 Connect with me
               </h3>
               <div className="flex items-center gap-4">

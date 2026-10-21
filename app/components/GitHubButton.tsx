@@ -12,7 +12,7 @@ const GitHubButton: React.FC<GitHubButtonProps> = ({ href }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-zinc-300 transition-colors duration-200 hover:border-accent/50 hover:text-white"
+      className="inline-flex items-center gap-2 rounded-full border border-line/15 px-4 py-2 text-sm font-medium text-fg-secondary transition-colors duration-200 hover:border-accent/50 hover:text-fg"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

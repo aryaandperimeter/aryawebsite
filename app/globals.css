@@ -3,23 +3,50 @@
 @tailwind utilities;
 
 :root {
-  --accent: 94, 234, 212;
+  color-scheme: dark;
+
+  --c-ink: 9 9 11;
+  --c-panel: 17 17 20;
+  --c-accent: 94 234 212;
+  --c-fg: 255 255 255;
+  --c-fg-secondary: 212 212 216;
+  --c-fg-tertiary: 161 161 170;
+  --c-fg-muted: 113 113 122;
+  --c-line: 255 255 255;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --c-ink: 250 250 250;
+  --c-panel: 255 255 255;
+  --c-accent: 13 148 136;
+  --c-fg: 24 24 27;
+  --c-fg-secondary: 63 63 70;
+  --c-fg-tertiary: 82 82 91;
+  --c-fg-muted: 113 113 122;
+  --c-line: 0 0 0;
 }
 
 html {
-  background: #09090b;
+  background: rgb(var(--c-ink));
 }
 
 body {
-  background: #09090b;
-  color: #f4f4f5;
+  background: rgb(var(--c-ink));
+  color: rgb(var(--c-fg));
   min-height: 100vh;
 }
 
 /* Fine background grid, used as a texture rather than a loud image */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(rgb(var(--c-line) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--c-line) / 0.035) 1px, transparent 1px);
   background-size: 44px 44px;
+}
+
+/* Soft accent glow used behind hero sections */
+.bg-accent-glow {
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgb(var(--c-accent) / 0.08), transparent);
 }

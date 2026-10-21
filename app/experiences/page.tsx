@@ -14,7 +14,7 @@ const experiences = [
       'Supporting dataset annotation, quality control, and reproducible Python-based analysis workflows for research on plant root architecture and crop resilience',
     ],
     skills: ['Image Segmentation', 'Python', 'Computational Phenotyping'],
-    companyIcon: <FaSeedling className="text-zinc-300" title="TOPP Lab" />,
+    companyIcon: <FaSeedling className="text-fg-secondary" title="TOPP Lab" />,
   },
   {
     title: 'Product Manager Intern',
@@ -26,7 +26,7 @@ const experiences = [
       'Built a sandbox evaluation environment and agentic RAG pipeline for on-device Small Language Models, defining evaluation criteria around task completion, citation accuracy, and hallucination reduction.',
     ],
     skills: ['Product Strategy', 'Agentic AI', 'RAG', 'LLMs'],
-    companyIcon: <SiDell className="text-zinc-300" title="Dell" />,
+    companyIcon: <SiDell className="text-fg-secondary" title="Dell" />,
   },
   {
     title: 'Engineering Program Manager Intern',
@@ -37,7 +37,7 @@ const experiences = [
       'Defined and prioritized features through user interviews, transitioning a multi-year prototype to production-ready in 4 months and aligning roadmap with leadership.',
     ],
     skills: ['Spatial Computing', 'Project Management', 'Vision Pro', 'Agile'],
-    companyIcon: <SiApple className="text-zinc-300" title="Apple" />,
+    companyIcon: <SiApple className="text-fg-secondary" title="Apple" />,
   },
   {
     title: 'Data Science Intern',
@@ -48,7 +48,7 @@ const experiences = [
       'Applied graph theory and clustering techniques to analyze clinical site relationships, optimizing site selection',
     ],
     skills: ['R', 'SQL', 'Power BI'],
-    companyIcon: <FaPills className="text-zinc-300" title="Medpace" />,
+    companyIcon: <FaPills className="text-fg-secondary" title="Medpace" />,
   },
   {
     title: 'Machine Learning Researcher',
@@ -59,7 +59,7 @@ const experiences = [
       'Presented a technical seminar to PhD researchers on transformer adaptation techniques and emerging architectures, strengthening lab knowledge exchange.',
     ],
     skills: ['Transformers', 'LoRA', 'P-Tuning'],
-    companyIcon: <FaRobot className="text-zinc-300" title="OPTML Lab" />,
+    companyIcon: <FaRobot className="text-fg-secondary" title="OPTML Lab" />,
   },
   {
     title: 'Data Science Intern',
@@ -70,7 +70,7 @@ const experiences = [
       'Extracted and visualized radiomic features from CT images using pyradiomics, SimpleITK, and matplotlib',
     ],
     skills: ['Data Analytics', 'Python', 'Healthcare'],
-    companyIcon: <FaMicroscope className="text-zinc-300" title="MIDI Lab" />,
+    companyIcon: <FaMicroscope className="text-fg-secondary" title="MIDI Lab" />,
   },
   {
     title: 'Machine Learning + VR Intern',
@@ -81,16 +81,16 @@ const experiences = [
       'Built a LLaMA-based model to automate equipment qualification procedure generation, streamlining documentation workflows',
     ],
     skills: ['Machine Learning', 'LLaMA', 'OCR'],
-    companyIcon: <FaAtom className="text-zinc-300" title="Idaho National Laboratory" />,
+    companyIcon: <FaAtom className="text-fg-secondary" title="Idaho National Laboratory" />,
   },
 ];
 
 export default function Experiences() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-ink bg-grid text-white">
+    <div className="relative min-h-screen overflow-x-hidden bg-ink bg-grid text-fg">
       <div className="mx-auto max-w-6xl px-5 pb-4 pt-10 md:px-10 md:pt-14">
         <header className="text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-tight text-fg md:text-5xl">
             Experiences
           </h1>
         </header>
@@ -107,14 +107,14 @@ export default function Experiences() {
         />
 
         <div
-          className="overflow-x-auto scroll-smooth overscroll-x-contain pb-6 pt-1 [scrollbar-color:rgba(94,234,212,0.4)_rgba(255,255,255,0.06)] [scrollbar-width:thin] snap-x snap-mandatory touch-pan-x"
+          className="overflow-x-auto scroll-smooth overscroll-x-contain pb-6 pt-1 [scrollbar-color:rgb(var(--c-accent)/0.4)_rgb(var(--c-line)/0.06)] [scrollbar-width:thin] snap-x snap-mandatory touch-pan-x"
           tabIndex={0}
           role="region"
           aria-label="Work and research experience timeline, scroll horizontally"
         >
           <div className="relative flex w-max min-w-0 gap-6 px-6 pb-2 pt-12 md:gap-8 md:px-12 md:pt-14">
             <div
-              className="pointer-events-none absolute left-6 right-6 top-6 z-0 h-px bg-white/10 md:left-12 md:right-12 md:top-7"
+              className="pointer-events-none absolute left-6 right-6 top-6 z-0 h-px bg-line/10 md:left-12 md:right-12 md:top-7"
               aria-hidden
             />
 
@@ -125,7 +125,7 @@ export default function Experiences() {
               >
                 <div className="absolute -top-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 md:-top-9">
                   <div className="h-3 w-3 rounded-full border-2 border-accent bg-ink md:h-3.5 md:w-3.5" aria-hidden />
-                  <span className="max-w-[12rem] text-center font-mono text-[0.65rem] uppercase leading-tight tracking-wider text-zinc-500">
+                  <span className="max-w-[12rem] text-center font-mono text-[0.65rem] uppercase leading-tight tracking-wider text-fg-muted">
                     {exp.date}
                   </span>
                 </div>

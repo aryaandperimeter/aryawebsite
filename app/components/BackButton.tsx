@@ -12,7 +12,7 @@ const BackButton: React.FC<BackButtonProps> = ({ href, text }) => {
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-2.5 text-sm font-medium text-zinc-300 transition-colors duration-200 hover:border-accent/50 hover:text-white"
+      className="inline-flex items-center gap-2 rounded-full border border-line/15 px-6 py-2.5 text-sm font-medium text-fg-secondary transition-colors duration-200 hover:border-accent/50 hover:text-fg"
     >
       <span aria-hidden>←</span>
       {text}

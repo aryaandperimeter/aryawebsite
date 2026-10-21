@@ -54,10 +54,10 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="relative min-h-screen bg-ink text-white">
+    <div className="relative min-h-screen bg-ink text-fg">
       <div className="mx-auto max-w-3xl px-6 py-14 md:px-8 md:py-20">
         <header className="mb-10 text-center md:mb-12">
-          <h1 className="text-4xl font-semibold text-white md:text-5xl">Projects</h1>
+          <h1 className="text-4xl font-semibold text-fg md:text-5xl">Projects</h1>
         </header>
 
         <div className="mb-10 space-y-5">

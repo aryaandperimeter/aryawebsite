@@ -13,7 +13,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-zinc-300 transition-colors duration-200 hover:border-accent/50 hover:text-white"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-line/15 text-fg-secondary transition-colors duration-200 hover:border-accent/50 hover:text-fg"
     >
       {icon}
     </a>
