@@ -9,7 +9,7 @@ interface ExperienceCardProps {
   achievements: string[];
   skills: string[];
   companyIcon?: React.ReactNode;
-  /** Hide the date pill (e.g. when date is shown on a horizontal timeline node) */
+  /** Hide the date when it is shown somewhere else */
   hideDate?: boolean;
   className?: string;
 }
@@ -25,57 +25,42 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   className = '',
 }) => {
   return (
-    <div
-      className={`emphasis-border card-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line/15 bg-panel/50 p-6 transition-colors duration-200 md:p-7 ${className}`}
-    >
-      <div className="mb-5 flex items-start justify-between gap-4 border-b border-line/10 pb-5">
-        <div className="flex min-w-0 flex-1 items-start gap-4">
-          {companyIcon ? (
-            <div
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-line/10 text-2xl"
-              aria-hidden
-            >
-              {companyIcon}
-            </div>
-          ) : null}
-          <div className="min-w-0 flex-1">
-            <h2 className="font-serif text-xl font-semibold leading-tight text-fg md:text-2xl">
-              {company}
-            </h2>
-            <p className="mt-1.5 text-sm font-medium text-fg-tertiary md:text-base">{title}</p>
-          </div>
-        </div>
-        {hideDate ? null : (
-          <span className="inline-flex w-fit shrink-0 items-center rounded-full border border-line/10 px-3 py-1.5 font-mono text-xs text-fg-tertiary">
-            {date}
+    <article className={`card flex h-full flex-col ${className}`}>
+      {hideDate ? null : <p className="font-serif text-20 text-muted">{date}</p>}
+
+      <div className={`${hideDate ? '' : 'mt-4'} flex min-w-0 items-start gap-3`}>
+        {companyIcon ? (
+          <span className="mt-1 shrink-0 text-forest" aria-hidden>
+            {companyIcon}
           </span>
-        )}
+        ) : null}
+        <div className="min-w-0">
+          <h2 className="font-serif text-28 font-normal leading-[1.2] text-fg">{company}</h2>
+          <p className="mt-2 text-20 font-bold text-fg">{title}</p>
+        </div>
       </div>
 
-      <div className="mb-4 flex-grow">
-        <ul className="space-y-2.5 text-fg-tertiary">
-          {achievements.map((achievement, index) => (
-            <li key={index} className="flex gap-3 text-sm leading-relaxed md:text-base">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent/70" aria-hidden />
-              <span>{achievement}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="mt-6 flex-grow space-y-3">
+        {achievements.map((achievement) => (
+          <li key={achievement} className="flex gap-3 text-16 text-fg">
+            <span className="font-serif text-forest" aria-hidden>
+              —
+            </span>
+            <span>{achievement}</span>
+          </li>
+        ))}
+      </ul>
 
       {skills.length > 0 ? (
-        <div className="mt-auto flex flex-wrap gap-2 border-t border-line/5 pt-4">
-          {skills.map((skill, index) => (
-            <span
-              key={index}
-              className="rounded-full border border-line/10 px-3 py-1 text-xs text-fg-tertiary"
-            >
+        <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+          {skills.map((skill) => (
+            <span key={skill} className="text-14 text-forest">
               {skill}
             </span>
           ))}
         </div>
       ) : null}
-    </div>
+    </article>
   );
 };
 

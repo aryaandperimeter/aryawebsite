@@ -5,7 +5,6 @@ interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string[];
-  icon: string;
   githubLink?: string;
 }
 
@@ -22,57 +21,45 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   technologies,
-  icon,
   githubLink,
 }) => {
   const highlights = parseHighlightLines(description);
 
   return (
-    <div className="emphasis-border card-surface group relative overflow-hidden rounded-2xl border border-line/15 bg-panel/50 transition-colors duration-200">
-      <div className="flex gap-5 p-6 md:p-8">
-        <div className="min-w-0 flex-1">
-          <div className="mb-5 flex items-start justify-between gap-4 border-b border-line/10 pb-5">
-            <div className="min-w-0">
-              <h2 className="font-serif text-xl font-semibold leading-tight text-fg md:text-2xl">
-                {title}
-              </h2>
-            </div>
-            <span
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line/10 text-xl leading-none"
-              aria-hidden
-            >
-              {icon}
-            </span>
+    <article className="grid grid-cols-4 gap-4 border-t border-forest py-8 sm:grid-cols-8 sm:gap-6 sm:py-12 lg:grid-cols-12">
+      <h2 className="col-span-4 font-serif text-28 font-normal text-fg sm:col-span-3 lg:col-span-5">
+        {title}
+      </h2>
+
+      <div className="col-span-4 sm:col-span-5 lg:col-span-7">
+        <ul className="space-y-3">
+          {highlights.map((line) => (
+            <li key={line} className="flex gap-3 text-16 text-fg">
+              <span className="font-serif text-forest" aria-hidden>
+                —
+              </span>
+              <span>{line}</span>
+            </li>
+          ))}
+        </ul>
+
+        {technologies.length > 0 ? (
+          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
+            {technologies.map((tech) => (
+              <span key={tech} className="text-14 text-forest">
+                {tech}
+              </span>
+            ))}
           </div>
+        ) : null}
 
-          <div className="mb-5">
-            <ul className="space-y-2.5 text-fg-tertiary">
-              {highlights.map((line, index) => (
-                <li key={index} className="flex gap-3 text-sm leading-relaxed md:text-base">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent/70" aria-hidden />
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
+        {githubLink ? (
+          <div className="mt-5">
+            <GitHubButton href={githubLink} />
           </div>
-
-          {technologies.length > 0 ? (
-            <div className="mb-5 flex flex-wrap gap-2 border-t border-line/5 pt-4">
-              {technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="rounded-full border border-line/10 px-3 py-1 text-xs text-fg-tertiary"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          ) : null}
-
-          {githubLink ? <GitHubButton href={githubLink} /> : null}
-        </div>
+        ) : null}
       </div>
-    </div>
+    </article>
   );
 };
 

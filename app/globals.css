@@ -3,92 +3,243 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
-
-  --c-ink: 9 9 11;
-  --c-panel: 17 17 20;
-  --c-accent: 45 212 191;
-  --c-fg: 255 255 255;
-  --c-fg-secondary: 212 212 216;
-  --c-fg-tertiary: 161 161 170;
-  --c-fg-muted: 113 113 122;
-  --c-line: 255 255 255;
-  --c-emphasis: var(--c-accent);
-}
-
-:root[data-theme='light'] {
   color-scheme: light;
 
-  --c-ink: 243 243 244;
-  --c-panel: 255 255 255;
-  --c-accent: 13 148 136;
-  --c-fg: 24 24 27;
-  --c-fg-secondary: 63 63 70;
-  --c-fg-tertiary: 82 82 91;
-  --c-fg-muted: 113 113 122;
-  --c-line: 0 0 0;
-  --c-emphasis: var(--c-fg);
+  /* Paper and text are the requested brown palette (#e6dcc5 / #302303). */
+  --c-paper: 230 220 197;
+  --c-fg: 48 35 3;
+  --c-accent: 192 81 47;
+  --c-forest: 47 91 79;
+  --c-muted: 138 129 122;
+  --c-surface: 255 255 255;
+
+  --font-sans: "Söhne", -apple-system, system-ui, sans-serif;
+  --font-serif: "GT Sectra", "Times New Roman", serif;
 }
 
 html {
-  background: rgb(var(--c-ink));
+  background: rgb(var(--c-paper));
 }
 
 body {
-  background: rgb(var(--c-ink));
+  background: rgb(var(--c-paper));
   color: rgb(var(--c-fg));
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
   min-height: 100vh;
 }
 
-/* Fine background grid, used as a texture rather than a loud image */
-.bg-grid {
-  background-image:
-    linear-gradient(rgb(var(--c-line) / 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(var(--c-line) / 0.035) 1px, transparent 1px);
-  background-size: 44px 44px;
+::selection {
+  background: rgb(var(--c-accent) / 0.08);
+  color: rgb(var(--c-fg));
 }
 
-/* Soft accent glow used behind hero sections */
-.bg-accent-glow {
-  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgb(var(--c-accent) / 0.08), transparent);
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
 }
 
-/* Card / panel lift: barely visible on a near-black surface, gives real
-   definition against a light background where a 1px border alone reads flat. */
-.card-surface {
-  box-shadow:
-    0 1px 2px rgb(var(--c-line) / 0.04),
-    0 10px 28px rgb(var(--c-line) / 0.07);
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 50vh;
+  padding-top: 32px;
 }
 
-/* Shared "highlighted" state: the accent in dark mode, but a strong ink
-   tone in light mode, where a pale accent color reads as low-contrast. */
-.emphasis-border {
-  transition: border-color 0.2s ease;
-}
-.emphasis-border:hover {
-  border-color: rgb(var(--c-emphasis) / 0.5);
+.section-y {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
-.emphasis-text {
-  transition: color 0.2s ease;
-}
-.emphasis-text:hover {
-  color: rgb(var(--c-emphasis));
-}
-
-.group:hover .group-emphasis-border {
-  border-color: rgb(var(--c-emphasis) / 0.5);
-}
-.group:hover .group-emphasis-text {
-  color: rgb(var(--c-emphasis));
+.rule {
+  height: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid rgb(var(--c-forest));
 }
 
-/* Thin accent frame around the viewport, echoing a bordered "page" feel */
-.page-frame {
+.card {
+  background: rgb(var(--c-paper));
+  border: 1px solid rgb(var(--c-forest));
+  border-radius: 16px;
+  padding: 21px;
+}
+
+.card:hover {
+  box-shadow: 0 2px 16px rgb(var(--c-fg) / 0.06);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 9px 13px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: rgb(var(--c-forest));
+  border: 1px solid rgb(var(--c-forest));
+  color: rgb(var(--c-paper));
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgb(var(--c-fg));
+  color: rgb(var(--c-fg));
+}
+
+.btn:focus-visible,
+.text-link:focus-visible {
+  outline: 1px solid rgb(var(--c-accent));
+  outline-offset: 3px;
+}
+
+.text-link {
+  color: rgb(var(--c-accent));
+  text-decoration-line: underline;
+  text-decoration-color: rgb(var(--c-accent) / 0.4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.text-link:hover {
+  background: rgb(var(--c-accent) / 0.08);
+  text-decoration: none;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgb(var(--c-fg) / 0.35);
+  border-radius: 8px;
+  padding: 2px 8px;
+  color: rgb(var(--c-forest));
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgb(var(--c-muted));
+  border-radius: 0;
+  background: transparent;
+  padding: 16px 0;
+  color: rgb(var(--c-fg));
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: none;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom-color: rgb(var(--c-accent));
+  outline: none;
+  box-shadow: none;
+}
+
+@media (min-width: 640px) {
+  .wrap {
+    padding-inline: 24px;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding-top: 48px;
+  }
+
+  .section-y {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .card {
+    padding: 32px;
+  }
+
+  .btn {
+    padding: 14px 20px;
+  }
+}
+
+@keyframes star-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-48px);
+  }
+}
+
+@keyframes star-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.star-bounce {
+  animation: star-bounce 1.8s ease-in-out infinite;
+}
+
+.star-spin {
+  display: block;
+  transform-origin: center;
+  animation: star-spin 16s linear infinite;
+}
+
+@keyframes star-confetti {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.25);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(var(--spin)) scale(1);
+    opacity: 0;
+  }
+}
+
+.star-confetti {
   position: fixed;
-  inset: 0;
-  z-index: 40;
+  z-index: 60;
   pointer-events: none;
-  border: 1px solid rgb(var(--c-accent) / 0.22);
+  animation: star-confetti 1.25s cubic-bezier(0.16, 0.84, 0.32, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-bounce,
+  .star-spin,
+  .star-confetti {
+    animation: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 72vh;
+    max-height: 120vh;
+    padding-top: 80px;
+  }
+
+  .section-y {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }

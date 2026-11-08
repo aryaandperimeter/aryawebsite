@@ -10,10 +10,7 @@ interface BackButtonProps {
 
 const BackButton: React.FC<BackButtonProps> = ({ href, text }) => {
   return (
-    <Link
-      href={href}
-      className="emphasis-border inline-flex items-center gap-2 rounded-full border border-line/15 px-6 py-2.5 text-sm font-medium text-fg-secondary transition-colors duration-200 hover:text-fg"
-    >
+    <Link href={href} className="btn btn-secondary">
       <span aria-hidden>←</span>
       {text}
     </Link>

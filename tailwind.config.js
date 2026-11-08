@@ -12,29 +12,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: withOpacity('--c-ink'),
-        panel: withOpacity('--c-panel'),
-        accent: withOpacity('--c-accent'),
+        paper: withOpacity('--c-paper'),
         fg: withOpacity('--c-fg'),
-        'fg-secondary': withOpacity('--c-fg-secondary'),
-        'fg-tertiary': withOpacity('--c-fg-tertiary'),
-        'fg-muted': withOpacity('--c-fg-muted'),
-        line: withOpacity('--c-line'),
+        accent: withOpacity('--c-accent'),
+        forest: withOpacity('--c-forest'),
+        muted: withOpacity('--c-muted'),
+        surface: withOpacity('--c-surface'),
       },
       fontFamily: {
+        sans: ['"Söhne"', '-apple-system', 'system-ui', 'sans-serif'],
+        serif: ['"GT Sectra"', '"Times New Roman"', 'serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
-        serif: ['var(--font-serif)', 'serif'],
       },
-      keyframes: {
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(12px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
+      fontSize: {
+        12: ['12px', { lineHeight: '1.6' }],
+        14: ['14px', { lineHeight: '1.6' }],
+        16: ['16px', { lineHeight: '1.6' }],
+        20: ['20px', { lineHeight: '1.6' }],
+        28: ['28px', { lineHeight: '1.2' }],
+        40: ['40px', { lineHeight: '1.2' }],
+        56: ['56px', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        80: ['80px', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
       },
-      animation: {
-        fadeUp: 'fadeUp 0.5s ease-out forwards',
+      maxWidth: {
+        page: '1200px',
+      },
+      spacing: {
+        gutter: '24px',
       },
     },
   },
   plugins: [],
-}
+};

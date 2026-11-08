@@ -3,59 +3,51 @@
 import React from 'react';
 import Link from 'next/link';
 import TitleCard from './components/TitleCard';
-import { FaCode, FaBrain, FaTasks } from 'react-icons/fa';
 import SkillCard from './components/SkillCard';
 import Footer from './components/Footer';
-
-const ctaClassName =
-  'emphasis-border inline-flex items-center justify-center rounded-full border border-line/15 px-7 py-3 text-sm font-medium text-fg-secondary transition-colors duration-200 hover:text-fg';
+import FunStuffButton from './components/FunStuffButton';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-grid">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-accent-glow" />
-
-      <section className="relative z-10 flex min-h-screen items-center justify-center py-16 md:py-20">
-        <div className="container mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
+    <main className="bg-paper text-fg">
+      <section className="hero">
+        <div className="wrap">
           <TitleCard />
-          <nav
-            className="mt-10 flex flex-wrap justify-center gap-3 md:mt-12 md:gap-4"
-            aria-label="Primary"
-          >
-            <Link href="/projects" className={ctaClassName}>
+          <nav className="mt-8 flex flex-wrap gap-4 sm:gap-6" aria-label="Primary">
+            <Link href="/projects" className="btn btn-secondary">
               View Projects
             </Link>
-            <Link href="/experiences" className={ctaClassName}>
+            <Link href="/experiences" className="btn btn-secondary">
               View Experiences
             </Link>
-            <Link href="/contact" className={ctaClassName}>
+            <FunStuffButton />
+            <Link href="/contact" className="btn btn-primary uppercase">
               Contact Me
             </Link>
           </nav>
         </div>
       </section>
 
-      <section className="relative z-10 py-16 md:py-24" aria-label="Skills">
-        <div className="relative mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+      <section className="section-y" aria-labelledby="skills-heading">
+        <div className="wrap">
+          <h2 id="skills-heading" className="mb-6 font-serif text-40 uppercase text-fg sm:mb-8 sm:text-56">
+            Skills
+          </h2>
+          <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 sm:gap-6 lg:grid-cols-12">
             <SkillCard
-              index={1}
+              className="col-span-4 sm:col-span-8 lg:col-span-4"
               title="Programming"
               skills={['Python', 'JavaScript', 'React', 'Next.js', 'TypeScript']}
-              icon={<FaCode className="h-5 w-5" />}
             />
             <SkillCard
-              index={2}
+              className="col-span-4 sm:col-span-8 lg:col-span-4"
               title="Data Science & ML"
-              icon={<FaBrain className="h-5 w-5" />}
               skills={['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'SQL', 'R']}
             />
             <SkillCard
-              index={3}
-              className="md:col-span-2 md:max-w-md md:justify-self-center lg:col-span-1 lg:max-w-none lg:justify-self-stretch"
+              className="col-span-4 sm:col-span-8 lg:col-span-4"
               title="Product Management"
               skills={['Agile', 'Scrum', 'Team Leadership', 'Strategic Planning']}
-              icon={<FaTasks className="h-5 w-5" />}
             />
           </div>
         </div>
