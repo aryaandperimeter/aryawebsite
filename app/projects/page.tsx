@@ -18,6 +18,7 @@ const projects: ProjectEntry[] = [
     description:
       '• Building an end-to-end NLP and data engineering pipeline to ingest, extract, normalize, and structure resilience planning data from unstructured municipal websites and documents across the U.S.',
     technologies: ['NLP', 'Data Engineering', 'Python', 'Data Pipelines'],
+    githubLink: 'https://github.com/ArjunRay123/NIST-CommunityResilience/tree/main',
   },
   {
     title: 'Gendered Emotions in 360° VR',
@@ -30,6 +31,7 @@ const projects: ProjectEntry[] = [
     description:
       '• Utilized Claude Code to design an AI-powered prototype enabling LinkedIn creators to discover trending topics across industries and generate personalized content angles\n• Defined validation framework (user interviews, behavioral data, competitive analysis), built an interactive Figma Make prototype, and established success metrics.',
     technologies: ['Claude Code', 'AI', 'Figma', 'User Research', 'Product'],
+    githubLink: 'https://github.com/aryaandperimeter/linkedin-trend-radar',
   },
   {
     title: 'Customer Personality Analysis',
@@ -51,7 +53,7 @@ const projects: ProjectEntry[] = [
       '• Conducted market research with local churches\n• Developed full-stack donation platform\n• Built React/TypeScript frontend with Vite\n• Created Node.js/Express/MongoDB backend\n• Implemented real-time food donation system',
     technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Vite'],
     viewLink: '#',
-    githubLink: 'https://github.com/aryaandperimeter/food_app',
+    githubLink: 'https://github.com/aryaandperimeter/ShelterSync',
   },
 ];
 

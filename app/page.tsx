@@ -21,6 +21,9 @@ export default function Home() {
               View Experiences
             </Link>
             <FunStuffButton />
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              My Resume
+            </a>
             <Link href="/contact" className="btn btn-primary uppercase">
               Contact Me
             </Link>
@@ -30,7 +33,7 @@ export default function Home() {
 
       <section className="section-y" aria-labelledby="skills-heading">
         <div className="wrap">
-          <h2 id="skills-heading" className="mb-6 font-serif text-40 uppercase text-fg sm:mb-8 sm:text-56">
+          <h2 id="skills-heading" className="mb-6 font-serif text-40 font-normal text-fg sm:mb-8 sm:text-56">
             Skills
           </h2>
           <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 sm:gap-6 lg:grid-cols-12">

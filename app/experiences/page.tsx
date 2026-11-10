@@ -9,7 +9,7 @@ const experiences = [
     company: 'TOPP Lab',
     date: 'Oct 2026 – Present',
     achievements: [
-      'Applying image segmentation and computational phenotyping methods to 2D and 3D root imaging datasets',
+      'Applying image segmentation and computer vision methods to 2D and 3D root imaging datasets',
       'Evaluating and benchmarking segmentation approaches and root architectural trait measurements across laboratory datasets',
       'Supporting dataset annotation, quality control, and reproducible Python-based analysis workflows for research on plant root architecture and crop resilience',
     ],
